@@ -1,0 +1,23 @@
+.tabuleiro-row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .quadrado {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: -1px;
+    margin-top: -1px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #999;
+    cursor: pointer;
+  }
+  
+  .status {
+    margin-bottom: 10px;
+  }
+  

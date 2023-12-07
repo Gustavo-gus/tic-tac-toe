@@ -4,20 +4,44 @@
     clear: both;
   }
   
+  
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f8ff; /* Azure - Uma cor fria */
+    margin: 0;
+  }
+  
+  .tabuleiro {
+    border: 2px solid #4682b4; /* SteelBlue - Uma cor fria */
+    max-width: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+  }
+  
   .quadrado {
-    float: left;
-    width: 50px;
-    height: 50px;
-    margin-right: -1px;
-    margin-top: -1px;
-    font-size: 24px;
-    line-height: 50px;
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
     text-align: center;
-    border: 1px solid #999;
+    line-height: 50px;
+    border: 2px solid #87ceeb; /* SkyBlue - Uma cor fria */
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .quadrado:hover {
+    background-color: #add8e6; /* LightBlue - Uma cor fria mais clara */
   }
   
   .status {
-    margin-bottom: 10px;
-  }
-  
+    margin-top: 20px;
+    font-size: 18px;
+    color: #4682b4; /* SteelBlue - Uma cor fria */
+  }  

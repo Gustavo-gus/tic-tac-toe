@@ -16,7 +16,7 @@ class JogoDaVelha extends Component {
     super(props);
     this.state = {
       quadrados: Array(9).fill(null),
-      proximoJogador: 'X',
+      proximoJogador: 'G',
       vencedor: null,
     };
   }
@@ -31,9 +31,18 @@ class JogoDaVelha extends Component {
     quadrados[i] = this.state.proximoJogador;
     const vencedor = calcularVencedor(quadrados);
 
+    const empate = quadrados.every((quadrado) => quadrado !== null);
+    if (!vencedor && empate) {
+      this.setState({
+        vencedor: 'Velha',
+      });
+      return;
+    }
+
+
     this.setState({
       quadrados: quadrados,
-      proximoJogador: this.state.proximoJogador === 'X' ? 'O' : 'X',
+      proximoJogador: this.state.proximoJogador === 'G' ? 'K' : 'G',
       vencedor: vencedor,
     });
   };
@@ -46,6 +55,7 @@ class JogoDaVelha extends Component {
       />
     );
   };
+  
 
   render() {
     const status = this.state.vencedor
